@@ -1,17 +1,17 @@
-Human Guard (Warriors)
+Human Hunter (Peasants)
 
 Attributes:
-Weapon Skill            28
-Ballistic Skill         36
-Strength                30
-Toughness               24
-Initiative              32
-Agility                 32
-Dexterity               31
-Intelligence            35
-Willpower               27
-Fellowship              36
-Wounds                  9
+Weapon Skill            31
+Ballistic Skill         28
+Strength                31
+Toughness               30
+Initiative              35
+Agility                 29
+Dexterity               29
+Intelligence            34
+Willpower               35
+Fellowship              33
+Wounds                  12
 Fate                    2
 Resilience              1
 Extra Points            3
@@ -21,14 +21,14 @@ Experience              120
 Talents:
 Doomed                  1
 Suave                   1
-Attractice              1
-Coolheaded              1
-Sixth Sense             1
+Warrior Born            1
+Mimic                   1
+Sturdy                  1
 
 Skills:
-Language (Brettonian)   5
-Ranged (Bow)            5
-Animal Care             5
-Language (Wastelander)  3
-Haggle                  3
-Melee (Basic)           3
+Cool                    5
+Perception              5
+Play (Any)              5
+Leadership              3
+Entertain (Sing)        3
+Ranged (Bow)            3

@@ -31,6 +31,7 @@ def class_select(race):
     return player_class[0]
 
 def attribute_select(race):
+    """adds attributes to your character based on race"""
     attribute_dict = {}
     with open('Attributes.txt', 'r') as file:
         race_finder = file.read()
@@ -59,6 +60,7 @@ def attribute_select(race):
 
     
 def talent_select(race, player_class):
+    """adds talents to your character depending on race and class"""
     talent_dict = {}
     with open('Talents.txt', 'r') as file:
         talent_finder = file.read()
@@ -142,6 +144,7 @@ def talent_select(race, player_class):
     return talent_dict
 
 def race_advances(race):
+    """adds advances to your character skills depending on race"""
     base_skill_dict = {}
     skill_list = []
     with open('Skills.txt', 'r') as file:
@@ -172,6 +175,7 @@ def race_advances(race):
 
 
 def char_sheet(race, player_class, attributes_dict, talents_dict, skills_dict):
+    """outputs your character to a text file"""
     with open('Character Sheet.txt', 'w') as file:
         file.write(f'{race} {player_class}\n\nAttributes:\n')
         for attribute in attributes_dict:
@@ -183,16 +187,19 @@ def char_sheet(race, player_class, attributes_dict, talents_dict, skills_dict):
         for skills in skills_dict:
             file.write(f'{skills:<22}  {str(skills_dict[skills])}\n')
 
+def main():
+    player_race, race_num = race_select()
+    player_class = class_select(player_race)
+    attribute_dict = attribute_select(player_race)
+    talent_dict = talent_select(player_race,player_class)
+    racial_skills = race_advances(race)
 
-player_race, race_num = race_select()
-player_class = class_select(player_race)
-attribute_dict = attribute_select(player_race)
-talent_dict = talent_select(player_race,player_class)
-racial_skills = race_advances(race)
+    print(racial_skills)
+    print(player_race)
+    print(player_class)
+    print(attribute_dict)
 
-print(racial_skills)
-print(player_race)
-print(player_class)
-print(attribute_dict)
-
-char_sheet(player_race, player_class, attribute_dict, talent_dict, racial_skills)
+    char_sheet(player_race, player_class, attribute_dict, talent_dict, racial_skills)
+    
+if __name__ == '__main__': 
+    main()
