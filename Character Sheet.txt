@@ -1,34 +1,59 @@
-Human Hunter (Peasants)
+Wood Elf Messenger (Rangers)
 
 Attributes:
-Weapon Skill            31
-Ballistic Skill         28
+Weapon Skill            36
+Ballistic Skill         39
 Strength                31
-Toughness               30
-Initiative              35
-Agility                 29
-Dexterity               29
-Intelligence            34
-Willpower               35
-Fellowship              33
-Wounds                  12
-Fate                    2
-Resilience              1
-Extra Points            3
-Movement                4
+Toughness               31
+Initiative              54
+Agility                 37
+Dexterity               47
+Intelligence            43
+Willpower               46
+Fellowship              28
+Wounds                  13
+Fate                    0
+Resilience              0
+Extra Points            2
+Movement                5
 Experience              120
 
 Talents:
-Doomed                  1
-Suave                   1
-Warrior Born            1
-Mimic                   1
-Sturdy                  1
+Acute Sense (Sight)     1
+Hardy                   1
+Night Vision            1
+Read/Write              1
+Rover                   1
 
 Skills:
-Cool                    5
-Perception              5
-Play (Any)              5
-Leadership              3
-Entertain (Sing)        3
-Ranged (Bow)            3
+Animal Care             5
+Evaluate                5
+Charm                   5
+Melee (Basic)           3
+Haggle                  3
+Language (Wastelander)  3
+
+Combat Attributes:
+Weapon Skill            36
+Weapon Skill Bonus      3
+Ballistic Skill         39
+Ballistic Skill Bonus   3
+Strength                31
+Strength Bonus          3
+Toughness               31
+Toughness Bonus         3
+Initiative              54
+Initiative Bonus        5
+Agility                 37
+Agility Bonus           3
+Dexterity               47
+Dexterity Bonus         4
+Intelligence            43
+Intelligence Bonus      4
+Willpower               46
+Willpower Bonus         4
+Fellowship              28
+Fellowship Bonus        2
+Wounds                  16
+Movement                5
+Charge Bonus            3

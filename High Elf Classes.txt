@@ -22,7 +22,7 @@
 3_Entertainer (Rangers)
 1_Messenger (Rangers)
 1_Boatman (Riverfolk)
-15_Seaman (Riverfolk)
+1_Seaman (Riverfolk)
 1_Smuggler (Riverfolk)
 2_Bawd (Rogues)
 3_Charlatan (Rogues)

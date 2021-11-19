@@ -35,7 +35,8 @@ def attribute_select(race):
     attribute_dict = {}
     with open('Attributes.txt', 'r') as file:
         race_finder = file.read()
-        race_finder = race_finder[race_finder.find(race+' Attributes Start'):race_finder.find(race+' Attributes End')].strip(race+' Attributes Start\n').split('\n')
+        race_finder = race_finder[race_finder.find(race+' Attributes Start'):race_finder.find(race+' Attributes End')].strip(race+' Attributes Start').strip('\n').split('\n')
+
         for attribute in race_finder:
             attribute = attribute.split('_')
             attribute_dict[attribute[0]] = int(attribute[1])
@@ -170,11 +171,70 @@ def race_advances(race):
             advances -= 1  
     return used_skills
 
+def combat_stats(attribute_dict):
+    combat_stats_dict = {}
+    combat_stats_dict['Weapon Skill'] = attribute_dict['Weapon Skill']
+    combat_stats_dict['Weapon Skill Bonus'] = int(str(combat_stats_dict['Weapon Skill'])[:1])
+    combat_stats_dict['Ballistic Skill'] = attribute_dict['Ballistic Skill']
+    combat_stats_dict['Ballistic Skill Bonus'] = int(str(combat_stats_dict['Ballistic Skill'])[:1])
+    combat_stats_dict['Strength'] = attribute_dict['Strength']    
+    combat_stats_dict['Strength Bonus'] = int(str(combat_stats_dict['Strength'])[:1])
+    combat_stats_dict['Toughness'] = attribute_dict['Toughness']    
+    combat_stats_dict['Toughness Bonus'] = int(str(combat_stats_dict['Toughness'])[:1])
+    combat_stats_dict['Initiative'] = attribute_dict['Initiative']    
+    combat_stats_dict['Initiative Bonus'] = int(str(combat_stats_dict['Initiative'])[:1])
+    combat_stats_dict['Agility'] = attribute_dict['Agility']    
+    combat_stats_dict['Agility Bonus'] = int(str(combat_stats_dict['Agility'])[:1])
+    combat_stats_dict['Dexterity'] = attribute_dict['Dexterity']    
+    combat_stats_dict['Dexterity Bonus'] = int(str(combat_stats_dict['Dexterity'])[:1])
+    combat_stats_dict['Intelligence'] = attribute_dict['Intelligence']    
+    combat_stats_dict['Intelligence Bonus'] = int(str(combat_stats_dict['Intelligence'])[:1])
+    combat_stats_dict['Willpower'] = attribute_dict['Willpower']    
+    combat_stats_dict['Willpower Bonus'] = int(str(combat_stats_dict['Willpower'])[:1])
+    combat_stats_dict['Fellowship'] = attribute_dict['Fellowship']    
+    combat_stats_dict['Fellowship Bonus'] = int(str(combat_stats_dict['Fellowship'])[:1])
+    combat_stats_dict['Wounds'] = attribute_dict['Wounds']    
+    combat_stats_dict['Movement'] = attribute_dict['Movement']      
+    combat_stats_dict['Charge Bonus'] = int(str(combat_stats_dict['Strength'])[:1])  
+    return combat_stats_dict
 
+def talent_boosts(talent_dict, combat_stats_dict):
+    """implements the talent in your character's stats"""
+    if 'Combat Reflexes' in talent_dict:
+        combat_stats_dict['Initiative'] += 10
+    if 'Coolheaded' in talent_dict:
+        combat_stats_dict['Willpower'] += 5
+    if 'Dirty Fighting' in talent_dict:
+        combat_stats_dict['Strength Bonus'] += 1
+    if 'Fleet Footed' in talent_dict:
+        combat_stats_dict['Movement'] += 1
+    if 'Frenzy' in talent_dict:
+        combat_stats_dict['Strength Bonus'] += 1
+    if 'Hardy' in talent_dict:
+        combat_stats_dict['Wounds'] += combat_stats_dict['Toughness Bonus']        
+    if 'Lightning Reflexes' in talent_dict:
+        combat_stats_dict['Agility'] += 5
+    if 'Marksman' in talent_dict:
+        combat_stats_dict['Ballistic Skill'] += 5    
+    if 'Nimble Fingered' in talent_dict:
+        combat_stats_dict['Dexterity'] += 5 
+    if 'Resolute' in talent_dict:
+        combat_stats_dict['Charge Bonus'] += 1
+    if 'Savvy' in talent_dict:
+        combat_stats_dict['Intelligence'] += 5 
+    if 'Sharp' in talent_dict:
+        combat_stats_dict['Initiative'] += 5 
+    if 'Suave' in talent_dict:
+        combat_stats_dict['Fellowship'] += 5 
+    if 'Very Resilient' in talent_dict:
+        combat_stats_dict['Toughness'] += 5 
+    if 'Very Strong' in talent_dict:
+        combat_stats_dict['Strength'] += 5 
+    if 'Warrior Born' in talent_dict:
+        combat_stats_dict['Weapon Skill'] += 5 
+    return combat_stats_dict
 
-
-
-def char_sheet(race, player_class, attributes_dict, talents_dict, skills_dict):
+def char_sheet(race, player_class, attributes_dict, talents_dict, skills_dict, combat_stats_dict):
     """outputs your character to a text file"""
     with open('Character Sheet.txt', 'w') as file:
         file.write(f'{race} {player_class}\n\nAttributes:\n')
@@ -186,20 +246,25 @@ def char_sheet(race, player_class, attributes_dict, talents_dict, skills_dict):
         file.write('\nSkills:\n')
         for skills in skills_dict:
             file.write(f'{skills:<22}  {str(skills_dict[skills])}\n')
+        file.write('\nCombat Attributes:\n')
+        for attribute in combat_stats_dict:
+            file.write(f'{attribute:<22}  {str(combat_stats_dict[attribute])}\n')
 
 def main():
     player_race, race_num = race_select()
+    player_race = 'Wood Elf'
     player_class = class_select(player_race)
     attribute_dict = attribute_select(player_race)
+    print(attribute_dict)
     talent_dict = talent_select(player_race,player_class)
     racial_skills = race_advances(race)
+    combat_stats_dict = combat_stats(attribute_dict)
+    combat_stats_dict = talent_boosts(talent_dict, combat_stats_dict)
 
-    print(racial_skills)
-    print(player_race)
-    print(player_class)
     print(attribute_dict)
+    print(talent_dict)
 
-    char_sheet(player_race, player_class, attribute_dict, talent_dict, racial_skills)
-    
+    char_sheet(player_race, player_class, attribute_dict, talent_dict, racial_skills, combat_stats_dict)
+
 if __name__ == '__main__': 
     main()
