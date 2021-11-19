@@ -1,15 +1,74 @@
 Human Skills Start
-
+Animal Care_0
+Charm_0
+Cool_0
+Evaluate_0
+Gossip_0
+Haggle_0
+Language (Brettonian)_0
+Language (Wastelander)_0
+Leadership_0
+Lore (Reikland)_0
+Melee (Basic)_0
+Ranged (Bow)_0
 Human Skills End
 
 Dwarf Skills Start
-
+Consume Alcohol_0
+Cool_0
+Endurance_0
+Entertain (Storytelling)_0
+Evaluate_0
+Intimidate_0
+Language (Khazalid)_0
+Lore (Dwarfs)_0
+Lore (Geology)_0
+Lore (Metallurgy)_0
+Melee (Basic)_0
+Trade (Any)_0
 Dwarf Skills End
 
 Halfling Skills Start
-
+Charm_0
+Consume Alcohol_0
+Dodge_0
+Gamble_0
+Haggle_0
+Intuition_0
+Language (Mootish)_0
+Lore (Reikland)_0
+Perception_0
+Sleight of Hand_0
+Stealth (Any)_0
+Trade (Cook)_0
 Halfling Skills End
 
-Elf Skills Start
+High Elf Skills Start
+Cool_0
+Entertain (Sing)_0
+Evaluate_0
+Language (Eltharin)_0
+Leadership_0
+Melee (Basic)_0
+Navigation_0
+Perception_0
+Play (Any)_0
+Ranged (Bow)_0
+Sail_0
+Swim_0
+High Elf Skills End
 
-Elf Skills End
+Wood Elf Skills Start
+Athletics_0
+Climb_0
+Endurance_0
+Entertain (Sing)_0
+Intimidate_0
+Language (Eltharin)_0
+Melee (Basic)_0
+Outdoor Survival_0
+Perception_0
+Ranged (Bow)_0
+Stealth (Rural)_0
+Track_0
+Wood Elf Skills End

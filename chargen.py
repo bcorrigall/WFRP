@@ -69,15 +69,12 @@ def talent_select(race, player_class):
 
     talent_list = []
     talent_chance = []
-    sum = 0
     with open('Random Talents.txt', 'r') as file:
         for line in file:
                 talent_line = line.strip('\n').split('_')
                 talent_chance.append(int(talent_line[0]))
                 talent_list.append(talent_line[1])
-                sum+=talent_chance[0]
                 
-    print(sum)
     if race == 'Human':
         random_talents = 3
         while random_talents > 0:
@@ -142,29 +139,60 @@ def talent_select(race, player_class):
             del talent_dict['Read/Write']
         else:
             del talent_dict['Very Resilient']
-
-
     return talent_dict
 
-def char_sheet(race, player_class, attributes_dict, talents_dict):
+def race_advances(race):
+    base_skill_dict = {}
+    skill_list = []
+    with open('Skills.txt', 'r') as file:
+        skill_finder = file.read()
+        skill_finder = skill_finder[skill_finder.find(race+' Skills Start'):skill_finder.find(race+' Skills End')].strip(race+' Skills Start\n').split('\n')
+        for skill in skill_finder:
+            skill = skill.split('_')
+            skill_list.append(skill[0])
+            base_skill_dict[skill[0]] = int(skill[1])
+
+    advances = 6
+    used_skills = {}
+    print(skill_list)
+    while advances > 0:
+        skill_advance = random.choice(skill_list)
+        if advances > 3 and skill_advance not in used_skills:
+            print(skill_advance)
+            used_skills[skill_advance] = 5
+            advances -= 1  
+        elif advances > 0 and skill_advance not in used_skills:
+            print(skill_advance)
+            used_skills[skill_advance] = 3
+            advances -= 1  
+    return used_skills
+
+
+
+
+
+def char_sheet(race, player_class, attributes_dict, talents_dict, skills_dict):
     with open('Character Sheet.txt', 'w') as file:
         file.write(f'{race} {player_class}\n\nAttributes:\n')
         for attribute in attributes_dict:
-            file.write(f'{attribute:<16}  {str(attributes_dict[attribute])}\n')
+            file.write(f'{attribute:<22}  {str(attributes_dict[attribute])}\n')
         file.write('\nTalents:\n')
         for talents in talents_dict:
-            file.write(f'{talents:<16}  {str(talents_dict[talents])}\n')
-
+            file.write(f'{talents:<22}  {str(talents_dict[talents])}\n')
+        file.write('\nSkills:\n')
+        for skills in skills_dict:
+            file.write(f'{skills:<22}  {str(skills_dict[skills])}\n')
 
 
 player_race, race_num = race_select()
 player_class = class_select(player_race)
 attribute_dict = attribute_select(player_race)
-
 talent_dict = talent_select(player_race,player_class)
+racial_skills = race_advances(race)
 
+print(racial_skills)
 print(player_race)
 print(player_class)
 print(attribute_dict)
 
-char_sheet(player_race, player_class, attribute_dict, talent_dict)
+char_sheet(player_race, player_class, attribute_dict, talent_dict, racial_skills)

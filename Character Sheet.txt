@@ -1,26 +1,34 @@
 Human Guard (Warriors)
 
 Attributes:
-Weapon Skill      31
-Ballistic Skill   36
-Strength          36
-Toughness         32
-Initiative        33
-Agility           31
-Dexterity         38
-Intelligence      31
-Willpower         31
-Fellowship        24
-Wounds            12
-Fate              2
-Resilience        1
-Extra Points      3
-Movement          4
-Experience        120
+Weapon Skill            28
+Ballistic Skill         36
+Strength                30
+Toughness               24
+Initiative              32
+Agility                 32
+Dexterity               31
+Intelligence            35
+Willpower               27
+Fellowship              36
+Wounds                  9
+Fate                    2
+Resilience              1
+Extra Points            3
+Movement                4
+Experience              120
 
 Talents:
-Doomed            1
-Savvy             1
-Attractice        1
-Very Resilient    1
-Hardy             1
+Doomed                  1
+Suave                   1
+Attractice              1
+Coolheaded              1
+Sixth Sense             1
+
+Skills:
+Language (Brettonian)   5
+Ranged (Bow)            5
+Animal Care             5
+Language (Wastelander)  3
+Haggle                  3
+Melee (Basic)           3
