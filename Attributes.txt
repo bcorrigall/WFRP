@@ -1,0 +1,75 @@
+Human Attributes Start
+Weapon Skill_20
+Ballistic Skill_20
+Strength_20
+Toughness_20
+Initiative_20
+Agility_20
+Dexterity_20
+Intelligence_20
+Willpower_20
+Fellowship_20
+Wounds_0
+Fate_2
+Resilience_1
+Extra Points_3
+Movement_4
+Experience_0
+Human Attributes End
+
+Dwarf Attributes Start
+Weapon Skill_30
+Ballistic Skill_20
+Strength_20
+Toughness_30
+Initiative_20
+Agility_10
+Dexterity_30
+Intelligence_20
+Willpower_40
+Fellowship_10
+Wounds_0
+Fate_0
+Resilience_2
+Extra Points_2
+Movement_3
+Experience_0
+Dwarf Attributes End
+
+Halfling Attributes Start
+Weapon Skill_10
+Ballistic Skill_30
+Strength_10
+Toughness_20
+Initiative_20
+Agility_20
+Dexterity_30
+Intelligence_20
+Willpower_30
+Fellowship_30
+Wounds_0
+Fate_0
+Resilience_2
+Extra Points_3
+Movement_3
+Experience_0
+Halfling Attributes End
+
+Elf Attributes Start
+Weapon Skill_30
+Ballistic Skill_30
+Strength_20
+Toughness_20
+Initiative_40
+Agility_30
+Dexterity_30
+Intelligence_30
+Willpower_30
+Fellowship_20
+Wounds_0
+Fate_0
+Resilience_0
+Extra Points_2
+Movement_5
+Experience_0
+Elf Attributes End
