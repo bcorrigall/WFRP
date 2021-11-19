@@ -55,7 +55,7 @@ Movement_3
 Experience_0
 Halfling Attributes End
 
-Elf Attributes Start
+High Elf Attributes Start
 Weapon Skill_30
 Ballistic Skill_30
 Strength_20
@@ -72,4 +72,23 @@ Resilience_0
 Extra Points_2
 Movement_5
 Experience_0
-Elf Attributes End
+High Elf Attributes End
+
+Wood Elf Attributes Start
+Weapon Skill_30
+Ballistic Skill_30
+Strength_20
+Toughness_20
+Initiative_40
+Agility_30
+Dexterity_30
+Intelligence_30
+Willpower_30
+Fellowship_20
+Wounds_0
+Fate_0
+Resilience_0
+Extra Points_2
+Movement_5
+Experience_0
+Wood Elf Attributes End

@@ -1,0 +1,32 @@
+3_Acute Sense
+3_Ambidextrous
+3_Animal Affinity
+3_Artistic
+3_Attractice
+3_Coolheaded
+3_Craftsman
+3_Flee!
+4_Hardy
+3_Lightning Reflexes
+3_Linguistics
+4_Luck
+3_Marksman
+3_Mimic
+3_Night Vision
+3_Nimble Fingered
+2_Noble Blood
+3_Orientation
+3_Perfect Pitch
+4_Pure Soul
+3_Read/Write
+3_Resistance
+3_Savvy
+3_Sharp
+4_Sixth Sense
+3_Strong Legs
+3_Sturdy
+3_Suave
+4_Super Numerate
+3_Very Resilient
+3_Very Strong
+3_Warrior Born

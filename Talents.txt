@@ -1,0 +1,44 @@
+Human Talents Start
+Doomed_1
+Savvy_1
+Suave_1
+Random_3
+Human Talents End
+
+Dwarf Talents Start
+Magic Resistance_1
+Night Vision_1
+Read/Write_1
+Relentless_1
+Resolute_1
+Strong Minded_1
+Sturdy_1
+Dwarf Talents End
+
+Halfling Talents Start
+Acute Sense (Taste)_1
+Night Vision_1
+Resistance (Chaos)_1
+Small_1
+Random_2
+Halfling Talents End
+
+High Elf Talents Start
+Acute Sense (Sight)_1
+Coolheaded_1
+Savvy_1
+Night Vision_1
+Second Sight_1
+Sixth Sense_1
+Read/Write_1
+High Elf Talents End
+
+Wood Elf Talents Start
+Acute Sense (Sight)_1
+Hardy_1
+Second Sight_1
+Night Vision_1
+Read/Write_1
+Very Resilient_1
+Rover_1
+Wood Elf Talents End

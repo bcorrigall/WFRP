@@ -1,0 +1,15 @@
+Human Skills Start
+
+Human Skills End
+
+Dwarf Skills Start
+
+Dwarf Skills End
+
+Halfling Skills Start
+
+Halfling Skills End
+
+Elf Skills Start
+
+Elf Skills End

@@ -1,0 +1,26 @@
+Human Guard (Warriors)
+
+Attributes:
+Weapon Skill      31
+Ballistic Skill   36
+Strength          36
+Toughness         32
+Initiative        33
+Agility           31
+Dexterity         38
+Intelligence      31
+Willpower         31
+Fellowship        24
+Wounds            12
+Fate              2
+Resilience        1
+Extra Points      3
+Movement          4
+Experience        120
+
+Talents:
+Doomed            1
+Savvy             1
+Attractice        1
+Very Resilient    1
+Hardy             1

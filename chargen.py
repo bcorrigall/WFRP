@@ -41,10 +41,11 @@ def attribute_select(race):
 
     for attribute in attribute_dict:
         if attribute not in ['Wounds', 'Fate', 'Resilience', 'Extra Points', 'Movement', 'Experience']:
+            #input(f'Roll 2d10 for {attribute}: ')
             roll1 = random.randint(1,10)
-            attribute_dict[attribute] += roll1
-
             roll2 = random.randint(1,10)
+            #print(f'Your first roll for {attribute} was {roll1}. Your Second roll was {roll2}. Your total {attribute} is {roll1+roll2+attribute_dict[attribute]}.')
+            attribute_dict[attribute] += roll1
             attribute_dict[attribute] += roll2
 
     attribute_dict['Experience'] = 120
@@ -54,10 +55,116 @@ def attribute_select(race):
     else:
         attribute_dict['Wounds'] = int(str(attribute_dict['Strength'])[:1]) + 2*int(str(attribute_dict['Toughness'])[:1]) + int(str(attribute_dict['Willpower'])[:1])
 
+    return attribute_dict
+
+    
+def talent_select(race, player_class):
+    talent_dict = {}
+    with open('Talents.txt', 'r') as file:
+        talent_finder = file.read()
+        talent_finder = talent_finder[talent_finder.find(race+' Talents Start'):talent_finder.find(race+' Talents End')].strip(race+' Talents Start\n').split('\n')
+        for talent in talent_finder:
+            talent = talent.split('_')
+            talent_dict[talent[0]] = int(talent[1])
+
+    talent_list = []
+    talent_chance = []
+    sum = 0
+    with open('Random Talents.txt', 'r') as file:
+        for line in file:
+                talent_line = line.strip('\n').split('_')
+                talent_chance.append(int(talent_line[0]))
+                talent_list.append(talent_line[1])
+                sum+=talent_chance[0]
+                
+    print(sum)
+    if race == 'Human':
+        random_talents = 3
+        while random_talents > 0:
+            random_talent = random.choices(talent_list, weights = talent_chance)
+            print(random_talent)
+            if random_talent[0] in talent_dict:
+                pass
+            elif random_talent[0] not in talent_dict:
+                random_talents -= 1
+                talent_dict[random_talent[0]] = 1
+        del talent_dict['Random']
+        savvy_or_suave = random.choice(('Savvy','Suave'))
+        if savvy_or_suave == 'Savvy':
+            del talent_dict['Suave']
+        else:
+            del talent_dict['Savvy']
+
+    elif race == 'Dwarf':
+        read_or_relentless = random.choice(('Read/Write','Relentless'))
+        if read_or_relentless == 'Read/Write':
+            del talent_dict['Relentless']
+        else:
+            del talent_dict['Read/Write']
+        resolute_or_strongminded = random.choice(('Resolute','Strong Minded'))
+        if resolute_or_strongminded == 'Resolute':
+            del talent_dict['Strong Minded']
+        else:
+            del talent_dict['Resolute']
+
+    elif race == 'Halfling':
+        random_talents = 2
+        while random_talents > 0:
+            random_talent = random.choices(talent_list, weights = talent_chance)
+            print(random_talent)
+            if random_talent[0] in talent_dict:
+                pass
+            elif random_talent[0] not in talent_dict:
+                random_talents -= 1
+                talent_dict[random_talent[0]] = 1
+        del talent_dict['Random']
+
+    elif race == 'High Elf':
+        coolheaded_or_savvy = random.choice(('Coolheaded','Savvy'))
+        if coolheaded_or_savvy == 'Coolheaded':
+            del talent_dict['Savvy']
+        else:
+            del talent_dict['Coolheaded']
+        secondsight_or_sixthsense = random.choice(('Second Sight','Sixth Sense'))
+        if secondsight_or_sixthsense == 'Second Sight':
+            del talent_dict['Sixth Sense']
+        else:
+            del talent_dict['Second Sight']
+
+    elif race == 'Wood Elf':
+        hardy_or_secondsight = random.choice(('Hardy','Second Sight'))
+        if hardy_or_secondsight == 'Hardy':
+            del talent_dict['Second Sight']
+        else:
+            del talent_dict['Hardy']
+        read_or_veryresilient = random.choice(('Read/Write','Very Resilient'))
+        if read_or_veryresilient == 'Very Resilient':
+            del talent_dict['Read/Write']
+        else:
+            del talent_dict['Very Resilient']
 
 
-    print(attribute_dict)
+    return talent_dict
+
+def char_sheet(race, player_class, attributes_dict, talents_dict):
+    with open('Character Sheet.txt', 'w') as file:
+        file.write(f'{race} {player_class}\n\nAttributes:\n')
+        for attribute in attributes_dict:
+            file.write(f'{attribute:<16}  {str(attributes_dict[attribute])}\n')
+        file.write('\nTalents:\n')
+        for talents in talents_dict:
+            file.write(f'{talents:<16}  {str(talents_dict[talents])}\n')
 
 
-print(class_select('Dwarf'))
-attribute_select('Dwarf')
+
+player_race, race_num = race_select()
+player_class = class_select(player_race)
+attribute_dict = attribute_select(player_race)
+
+talent_dict = talent_select(player_race,player_class)
+
+print(player_race)
+print(player_class)
+print(attribute_dict)
+
+char_sheet(player_race, player_class, attribute_dict, talent_dict)
